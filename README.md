@@ -1,3 +1,3 @@
-# Lunar Lander Solved with Least Squares Policy Iteration (LSPI)
+# Lunar Lander Solutions
 
-The Python notebook provides an implementation of LSPI to solve Lunar Lander.
+The Python notebook provides an implementation of LSPI and SARSA($\lambda$) to solve Lunar Lander.
