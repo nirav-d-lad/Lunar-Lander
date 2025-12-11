@@ -52,8 +52,8 @@ Loop for each episode: <br>
 &nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{s},a \gets$ initial state, action of episode (i.e $\varepsilon$-greedy) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Loop for each episode:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take action $a$ and observe $r, \mathbf{s}'$<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If $\mathbf{s}'$ is terminal:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{w} \gets \mathbf{w} + \alpha[R - \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w}) / ||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If $\mathbf{s}'$ is terminal: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{w} \gets \mathbf{w} + \alpha[R - \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w}) / ||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to next episode. <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Choose $a'$ as a function of $\hat{q}(\mathbf{s}',\cdot, \mathbf{w})$ (e.g. $\varepsilon$-greedy) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{w} \gets \mathbf{w} + \alpha[R + \gamma\hat{q}(\mathbf{s}',a',\mathbf{w})- \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w})/||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
