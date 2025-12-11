@@ -45,20 +45,20 @@ This return is the feature vector $\mathbf{x}$ mutlipied by the indicator functi
 
 Episodic Semi-gradient SARSA is implemented as described below by [Sutton and Barto](https://mitpress.mit.edu/9780262039246/reinforcement-learning/) with a the addition of normalization of the gradient vector.
 
-**INPUT**: A differentiable action-value function parameterization $\hat{q}: \mathbf{s} \times \mathbf{A} \rightarrow \mathbb{R}^k \rightarrow \mathbb{R}$. <br> 
-**Algorithm parameters**: Step-size $\alpha > 0$, small $\varepsilon > 0$. <br>
-Initialize value-function weights $\mathbf{w} \in \mathbb{R}^k$ arbitrarily (i.e. $\mathbf{w} = \mathbf{0}$).<br>
-Loop for each episode: <br>
-&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{s},a \gets$ initial state, action of episode (i.e $\varepsilon$-greedy) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Loop for each episode:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take action $a$ and observe $r, \mathbf{s}'$<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If $\mathbf{s}'$ is terminal: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{w} \gets \mathbf{w} + \alpha[R - \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w}) / ||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to next episode. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Choose $a'$ as a function of $\hat{q}(\mathbf{s}',\cdot, \mathbf{w})$ (e.g. $\varepsilon$-greedy) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{w} \gets \mathbf{w} + \alpha[R + \gamma\hat{q}(\mathbf{s}',a',\mathbf{w})- \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w})/||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
-&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{s} \gets \mathbf{s}'$<br>
-&nbsp;&nbsp;&nbsp;&nbsp;$a \gets a'$<br>
+>**INPUT**: A differentiable action-value function parameterization $\hat{q}: \mathbf{s} \times \mathbf{A} \rightarrow \mathbb{R}^k \rightarrow \mathbb{R}$. <br> 
+>**Algorithm parameters**: Step-size $\alpha > 0$, small $\varepsilon > 0$. <br>
+>Initialize value-function weights $\mathbf{w} \in \mathbb{R}^k$ arbitrarily (i.e. >$\mathbf{w} = \mathbf{0}$).<br>
+>Loop for each episode: <br>
+>&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{s},a \gets$ initial state, action of episode (i.e $\varepsilon$-greedy) <br>
+>&nbsp;&nbsp;&nbsp;&nbsp;Loop for each episode:<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take action $a$ and observe $r, \mathbf{s}'$<br>
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If $\mathbf{s}'$ is terminal: <br>
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{w} \gets \mathbf{w} + \alpha[R - \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w}) / ||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to next episode. <br>
+>&nbsp;&nbsp;&nbsp;&nbsp;Choose $a'$ as a function of $\hat{q}(\mathbf{s}',\cdot, \mathbf{w})$ (e.g. $\varepsilon$-greedy) <br>
+>&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{w} \gets \mathbf{w} + \alpha[R + \gamma\hat{q}(\mathbf{s}',a',\mathbf{w})- \hat{q}(\mathbf{s},a,\mathbf{w})]\nabla\hat{q}(\mathbf{s},a,\mathbf{w})/||\nabla\hat{q}(\mathbf{s},a,\mathbf{w})||$ <br>
+>&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{s} \gets \mathbf{s}'$<br>
+>&nbsp;&nbsp;&nbsp;&nbsp; $a \gets a'$<br>
 
 The learning curve looks GREAT as shown below:
 <div style="text-align: center;">
