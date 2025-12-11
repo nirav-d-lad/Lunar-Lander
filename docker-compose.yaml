@@ -1,0 +1,12 @@
+services:
+  app:
+    image: gym:latest 
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./:/home/gym
+    working_dir: /home/gym
+    container_name: gym
+    tty: true
+    restart: unless-stopped

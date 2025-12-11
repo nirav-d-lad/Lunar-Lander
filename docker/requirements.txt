@@ -1,0 +1,9 @@
+numpy
+pandas
+gymnasium[box2d]
+matplotlib
+seaborn
+scipy
+moviepy
+tqdm
+isort
