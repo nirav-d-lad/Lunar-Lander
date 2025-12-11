@@ -48,9 +48,8 @@ Episodic Semi-gradient SARSA is implemented as described below by [Sutton and Ba
 **INPUT**: A differentiable action-value function parameterization $\hat{q}: \mathbf{s} \times \mathbf{A} \rightarrow \mathbb{R}^k \rightarrow \mathbb{R}$. <br> 
 **Algorithm parameters**: Step-size $\alpha > 0$, small $\varepsilon > 0$. <br>
 Initialize value-function weights $\mathbf{w} \in \mathbb{R}^k$ arbitrarily (i.e. $\mathbf{w} = \mathbf{0}$).<br>
-<br>
 Loop for each episode: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{s},a \gets$ initial state, action of episode (i.e $\varepsilon$-greedy)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; $\mathbf{s},a \gets$ initial state, action of episode (i.e $\varepsilon$-greedy) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Loop for each episode:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take action $a$ and observe $r, \mathbf{s}'$<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If $\mathbf{s}'$ is terminal:<br>
