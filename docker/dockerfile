@@ -4,7 +4,7 @@ WORKDIR /home/gym
 
 RUN apt-get update
 RUN apt-get upgrade -y 
-RUN apt-get install -y swig
+RUN apt-get install -y swig libsdl2-dev
 RUN apt-get clean 
 RUN rm -rf /var/lib/apt/lists/*
 
@@ -14,5 +14,6 @@ COPY docker/requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 RUN rm requirements.txt
+
 
 CMD ["bash"]
